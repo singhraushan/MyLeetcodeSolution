@@ -4,8 +4,8 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
         System.out.println("longestCommonPrefix: " + longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
-        System.out.println("longestCommonPrefix: " + longestCommonPrefix(new String[]{"dog","racecar","car"}));
-        System.out.println("longestCommonPrefix: " + longestCommonPrefix(new String[]{"c","acc","ccc"}));
+        System.out.println("longestCommonPrefix: " + longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
+        System.out.println("longestCommonPrefix: " + longestCommonPrefix(new String[]{"c", "acc", "ccc"}));
     }
 
     public static String longestCommonPrefix(String[] strs) {
