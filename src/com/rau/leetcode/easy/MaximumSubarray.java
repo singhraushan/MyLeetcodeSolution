@@ -2,7 +2,7 @@ package com.rau.leetcode.easy;
 
 public class MaximumSubarray {
     public static void main(String[] args) {
-        System.out.println("maxSubArray: "+maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        System.out.println("maxSubArray: " + maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 
     public static int maxSubArray(int[] nums) {
