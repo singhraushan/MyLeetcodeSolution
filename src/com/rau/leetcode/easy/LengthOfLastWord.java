@@ -12,13 +12,14 @@ public class LengthOfLastWord {
         int len = s.length();
         if (len==0)
             return 0;
-        if(len==1)
-            return 1;
-        int start = 0;
-        for (int i = 1; i < len; i++) {
-            if(s.charAt(i) != ' ' && s.charAt(i-1)==' ')
-                start = i;
+        int result = 0;
+        for (int i = len-1; i >= 0; i--) {
+            if(s.charAt(i) == ' '){
+                break;
+            }else {
+                result++;
+            }
         }
-        return len-start;
+        return result;
     }
 }
