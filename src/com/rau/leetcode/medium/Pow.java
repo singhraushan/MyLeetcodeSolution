@@ -3,7 +3,8 @@ package com.rau.leetcode.medium;
 public class Pow {
     public static void main(String[] args) {
         //System.out.println("myPow: " + myPow(2.10000, 3));
-        System.out.println("myPow: " + myPow(0.00001, 2147483647));
+        //System.out.println("myPow: " + myPow(0.00001, 2147483647));
+        System.out.println("myPow: " + myPow(3, 2));
     }
 
     //this one also correct.
