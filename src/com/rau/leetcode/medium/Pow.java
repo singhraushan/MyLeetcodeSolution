@@ -1,5 +1,6 @@
 package com.rau.leetcode.medium;
 
+//291 / 304 test cases passed.: Time Limit Exceeded
 public class Pow {
     public static void main(String[] args) {
         //System.out.println("myPow: " + myPow(2.10000, 3));
