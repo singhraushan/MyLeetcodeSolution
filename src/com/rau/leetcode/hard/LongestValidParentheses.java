@@ -51,4 +51,37 @@ public class LongestValidParentheses {
         }
         return stack.isEmpty();
     }
+    //2nd way 
+    /*public static int longestValidParentheses(String s) {
+        int len = s.length(), maxLen = 0, temp;
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j < len; j += 2) {// no need to check odd length.
+                temp = (j - i);
+                if (temp > maxLen && isValidSmallParentheses(s.substring(i, j + 1))) {
+                    temp++;
+                    maxLen = maxLen > temp ? maxLen : temp;
+                }
+            }
+        }
+        return maxLen;
+    }
+
+    public static boolean isValidSmallParentheses(String input) {
+        int stackCount = 0, len = input.length();
+        char open = '(', ch;
+        if(input.charAt(0)==')' || input.charAt(len-1)==open)
+            return false;
+        for (int i = 0; i < len; i++) {
+            ch = input.charAt(i);
+            if (ch == open) {
+                stackCount++;
+            } else {
+                if (stackCount == 0)
+                    return false;
+                stackCount--;
+            }
+        }
+        return stackCount == 0 ? true : false;
+    }
+    */
 }
