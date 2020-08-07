@@ -5,7 +5,9 @@ import java.util.*;
 public class GroupAnagrams {
     public static void main(String[] args) {
         List<List<String>> result = groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
-        System.out.println(result.size());
+        long startTime = System.currentTimeMillis();
+        System.out.println(result);
+        System.out.println("total time: "+(System.currentTimeMillis()-startTime));
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {
