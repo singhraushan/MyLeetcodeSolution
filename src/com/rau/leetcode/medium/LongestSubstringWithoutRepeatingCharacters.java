@@ -1,35 +1,22 @@
 package com.rau.leetcode.medium;
 
-import java.util.HashMap;
-
 public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
-        System.out.println("lengthOfLongestSubstring is :" + lengthOfLongestSubstring(" "));
+        System.out.println("lengthOfLongestSubstring is :" + lengthOfLongestSubstring("pwwkew"));
+        System.out.println("lengthOfLongestSubstring is :" + lengthOfLongestSubstring("abcdcfgh"));
     }
-
     public static int lengthOfLongestSubstring(String s) {
-        int len = s.length(), maxSubStr = 0;
-        if (len == 1)
-            return 1;
-        for (int i = 0; i < len; i++) {
-            for (int j = 1; j < len; j++) {
-                HashMap<Character, String> map = new HashMap<>();
-                boolean iSDuplicate = false;
-                for (int k = i; k <= j; k++) {
-                    char c = s.charAt(k);
-                    if (map.get(c) != null) {
-                        iSDuplicate = true;
-                        break;
-                    } else {
-                        map.put(c, "");
-                    }
-                }
-                if (!iSDuplicate && map.size() > maxSubStr) {
-                    maxSubStr = map.size();
-                }
+        int len = s.length(), max = 0, end_pointer = 0;
+        String seen = "";
+        while (end_pointer < len) {
+            String ch = String.valueOf(s.charAt(end_pointer));
+            if (seen.contains(ch)) {
+                seen = seen.substring(seen.indexOf(ch)+1);
             }
+            seen = seen + ch;
+            max = Math.max(max, seen.length());
+            end_pointer++;
         }
-
-        return maxSubStr;
+        return max;
     }
 }
