@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ZigZagConversion {
     public static void main(String[] args) {
-        System.out.println("ZigZag Pattern reading : " + convert("PAYPALISHIRING", 2));
+        System.out.println("ZigZag Pattern reading: " + convert("PAYPALISHIRING", 2));
     }
 
     public static String convert(String s, int numRows) {
