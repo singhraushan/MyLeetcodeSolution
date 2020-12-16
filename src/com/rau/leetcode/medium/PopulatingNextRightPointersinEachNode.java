@@ -31,7 +31,7 @@ public class PopulatingNextRightPointersinEachNode {
                  if(curr.right!=null){
                      q.add(curr.right);
                      if(size!=0){
-                         curr.left.next = q.element().left;
+                         curr.right.next = q.element().left;
                      }
                  }
              }
