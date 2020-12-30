@@ -6,7 +6,6 @@ import java.util.Set;
 public class RemoveDuplicatesFromSortedListII {
 
     public static void main(String[] args) {
-        //1->2->3->3->4->4->5
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
@@ -14,14 +13,14 @@ public class RemoveDuplicatesFromSortedListII {
         head.next.next.next.next = new ListNode(4);
         head.next.next.next.next.next = new ListNode(4);
         head.next.next.next.next.next.next = new ListNode(5);
-        //print(deleteDuplicates(head));
+        print(deleteDuplicates(head));
         System.out.println("-------------");
         head = new ListNode(1);
         head.next = new ListNode(1);
         head.next.next = new ListNode(1);
         head.next.next.next = new ListNode(2);
         head.next.next.next.next = new ListNode(3);
-        //print(deleteDuplicates(head));
+        print(deleteDuplicates(head));
         head = new ListNode(1);
         head.next = new ListNode(1);
         print(deleteDuplicates(head));
