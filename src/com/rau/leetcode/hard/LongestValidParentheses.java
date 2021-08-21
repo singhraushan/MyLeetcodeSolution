@@ -32,7 +32,6 @@ public class LongestValidParentheses {
                             max = Math.max(max, tempMax);
                         }
                     }
-
                 }
                 if (stack.size()==len) {
                     return 0;
