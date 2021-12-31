@@ -6,7 +6,7 @@ import java.util.List;
 
 public class IntersectionOfTwoArraysII {
     public static void main(String[] args) {
-        intersect(new int[]{4,9,5},new int[]{9,4,9,8,4});//[9, 4]
+        intersect(new int[]{4,9,5},new int[]{9,4,9,8,4});//output: [9, 4]
     }
     public static int[] intersect(int[] nums1, int[] nums2) {
         HashMap<Integer,Integer> seenCount= new HashMap<>();
