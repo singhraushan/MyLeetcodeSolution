@@ -6,7 +6,6 @@ public class PalindromeLinkedList {
         head.next=new ListNode(2);
         head.next.next=new ListNode(2);
         head.next.next.next=new ListNode(1);
-        head.next.next.next.next=new ListNode(3);
         System.out.println(isPalindrome(head));//true
 
         head=new ListNode(1);//1,2,2,1
