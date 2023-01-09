@@ -1,0 +1,56 @@
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.text.TextPosition;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+public class PDFTableExtractor {
+
+    public static void main(String[] args) throws IOException {
+        // Open the PDF file
+        File file = new File("path/to/your/pdf/file.pdf");
+        PDDocument document = PDDocument.load(file);
+
+        // Create a PDFTextStripper object
+        PDFTextStripper stripper = new PDFTextStripper() {
+            // Override the processTextPosition method to extract table data
+            @Override
+            protected void processTextPosition(TextPosition text) {
+                // Get the font of the current text
+                PDFont font = text.getFont();
+
+                // Check if the font is a monospaced font (typical for tables)
+                if (font != null && font.isMonospaced()) {
+                    // Get the bounding box of the current text
+                    PDRectangle rect = text.getBoundingBox();
+
+                    // Print the table data
+                    System.out.println(text.getUnicode() + "," + rect.getLowerLeftX() + "," + rect.getLowerLeftY() + "," + rect.getUpperRightX() + "," + rect.getUpperRightY());
+                }
+            }
+        };
+
+        // Set the font to a monospaced font, to improve table detection
+        stripper.setFont(PDType1Font.COURIER);
+
+        // Set the sort by position flag to true, to improve table detection
+        stripper.setSortByPosition(true);
+
+        // Get the pages of the PDF file
+        List<PDPage> pages = document.getDocumentCatalog().getAllPages();
+
+        // Iterate over the pages and extract the table data
+        for (PDPage page : pages) {
+            stripper.extractRegions(page);
+        }
+
+        // Close the PDF document
+        document.close();
+    }
+}
