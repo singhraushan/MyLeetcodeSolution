@@ -32,4 +32,7 @@ public class HouseRobber {
         }
         return max;
     }
+    public void solution1(int N) {
+        // write your code in Java SE 8
+    }
 }
